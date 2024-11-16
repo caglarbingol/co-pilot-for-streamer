@@ -2,8 +2,14 @@
 name = "CoPilotS"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+build = "build.rs"
 
 [dependencies]
-actix-web = "4.0"
+cpal = "0.15.3"
+tonic = { version = "0.5", features = ["prost"] }
+prost = "0.8"
+prost-types = "0.8"
+tokio = { version = "1", features = ["full"] }
+
+[build-dependencies]
+tonic-build = "0.5"
